@@ -42,6 +42,11 @@ def centrar(message):
     a = round((50 - tamaño) / 2)
     print("*"*a, message, "*"*a)
 
+def Derecha(message1, message2):
+    tamaño = len(message1) + len(message2)
+    a = round(50 - tamaño)
+    print(message1, "."*a, message2)
+
 def subTotal(option):
     plato1 = entradas[option[0]-1]
     plato2 = platos[option[1]-1]
@@ -49,9 +54,11 @@ def subTotal(option):
     return total
 
 def listar(data, message):
-    print("*"*15, message, "*"*15)
+    centrar(message)
     for i in data:
-        print(i['name'], "   S/." ,i['price'])
+        name = i['name']
+        price = "S/. " + str(i['price'])
+        Derecha(name, price)
 
 while True:
     print("Bienvenido al restaurante ejemplo")
@@ -86,7 +93,8 @@ while True:
 
         listar(usable1, "Entradas")
         listar(usable2, "Platos Principales")
-        print("TOTAL: S/.",total)
+        totalm = "S/. " + str(total)
+        Derecha("TOTAL", totalm)
         break
     option = []
     

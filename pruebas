@@ -13,7 +13,10 @@ def centrar(message):
     print("*"*a, message, "*"*a)
 
 
-texto = "XD"
-texto2 = "PALA Y PIOLA"
-centrar("Pablo")
-centrar(texto2)
+def Derecha(message1, message2):
+    tamaño = len(message1) + len(message2)
+    a = round(50 - tamaño)
+    print(message1, "."*a, message2)
+
+Derecha("Frugos", "S/. 15")
+Derecha("Oreo", "S/. 5")
