@@ -1,0 +1,19 @@
+def ejercicio1():
+    sueldo = float(input("ingrese el sueldo base: "))
+
+    ventas = float(input("Ingrese el monto de las ventas: "))
+
+    sueldoF = sueldo + ventas*0.8
+
+    print(sueldoF)
+
+def centrar(message):
+    tamaño = len(message)
+    a = round((50 - tamaño) / 2)
+    print("*"*a, message, "*"*a)
+
+
+texto = "XD"
+texto2 = "PALA Y PIOLA"
+centrar("Pablo")
+centrar(texto2)
