@@ -25,7 +25,11 @@ def Procentaje(varones, mujeres):
 
 def Promedio(c1, ep, c2, ef):
     pf = (c1*20/100) + (ep*25/100) + (c2*20/100) + (ef*35/100)
-    return pf 
+    if pf >=10.5:
+        mensaje ="Aprobó"
+    else:
+        mensaje = "Desaprobó"
+    return [round(pf, 2), mensaje]
 
 while True:
     print("*" * 30)
@@ -59,7 +63,10 @@ while True:
         ep = float(input("Ingrese el parcial: "))
         c2 = float(input("Ingrese el consolidado 2: "))
         ef = float(input("Ingrese el examen final: "))
-        print("Su promedio final es: " + str(Promedio(c1, ep, c2, ef)))
+        respuesta = Promedio(c1, ep, c2, ef)
+        print("*"*30)
+        print("Su promedio final es: " + str(respuesta[0]))
+        print("Usted "+ str(respuesta[1]))
         time.sleep(2)
 
     elif option == 0:
