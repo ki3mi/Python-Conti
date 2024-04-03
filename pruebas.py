@@ -21,4 +21,4 @@ def Derecha(message1, message2):
 Derecha("Frugos", "S/. 15")
 Derecha("Oreo", "S/. 5")
 
-#Estoy en git
+# Estoy en git
