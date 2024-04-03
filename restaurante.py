@@ -18,7 +18,7 @@ platos = [
 entradas = [
     {
         "id": 1,
-        "name": "Aguaadito",
+        "name": "Aguadito",
         "price": 5
     },
     {
