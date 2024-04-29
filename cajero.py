@@ -23,73 +23,123 @@ def Izquierda(message):
     tamaño = round(50 - tamaño)
     print(message, "*"*tamaño)
 
-# def Animate():
-#     x = None
-#     while True:
-#         system("cls")
-#         espacio()
-#         centrar("BCP")
-#         espacio()
-#         x = input("*Precione un tecla para continuar*")
-#         if x is None:
-#             pass
-#         else:
-#             break
-#         time.sleep(0.2)
-#         system("cls")
-#         espacio()
-#         centrar("_BC")
-#         espacio()
-#         x = input("*Precione un tecla para continuar*")
-#         if x is None:
-#             pass
-#         else:
-#             break
-#         time.sleep(0.2)
-#         system("cls")
-#         espacio()
-#         centrar("__B")
-#         espacio()
-#         x = input("*Precione un tecla para continuar*")
-#         if x is None:
-#             pass
-#         else:
-#             break
-#         time.sleep(0.2)
-#         system("cls")
-#         espacio()
-#         centrar("___")
-#         espacio()
-#         x = input("*Precione un tecla para continuar*")
-#         if x is None:
-#             pass
-#         else:
-#             break
-#         time.sleep(0.2)
-#         system("cls")
-#         espacio()
-#         centrar("P__")
-#         espacio()
-#         x = input("*Precione un tecla para continuar*")
-#         if x is None:
-#             pass
-#         else:
-#             break
-#         time.sleep(0.2)
-#         system("cls")
-#         espacio()
-#         centrar("CP_")
-#         espacio()
-#         x = input("*Precione un tecla para continuar*")
-#         if x is None:
-#             pass
-#         else:
-#             break
+paso1 = '''
+        ********    **********  **********  
+        *********   **********  **********  
+        ***    ***  ***         ***    ***  
+        ***    ***  ***         ***    ***  
+        ********    ***         ***    ***  
+        ********    ***         **********  
+        ***    ***  ***         **********  
+        ***    ***  ***         ***         
+        *********   **********  ***         
+        ********    **********  ***          
+'''
+paso2 = '''
+                    ********    **********  
+                    *********   **********  
+                    ***    ***  ***         
+                    ***    ***  ***         
+                    ********    ***         
+                    ********    ***         
+                    ***    ***  ***         
+                    ***    ***  ***         
+                    *********   **********  
+                    ********    **********   
+'''
+paso3= '''
+                                ********      
+                                *********     
+                                ***    ***    
+                                ***    ***    
+                                ********      
+                                ********      
+                                ***    ***    
+                                ***    ***    
+                                *********     
+                                ********       
+'''
+paso4 = '''
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+        
+'''
+paso5 = '''
+          **********                         
+          **********                         
+          ***    ***                         
+          ***    ***                         
+          ***    ***                         
+          **********                         
+          **********                         
+          ***                                
+          ***                                
+          ***                                 
+'''
+paso6 = '''
+          **********  **********             
+          **********  **********             
+          ***         ***    ***             
+          ***         ***    ***             
+          ***         ***    ***             
+          ***         **********             
+          ***         **********             
+          ***         ***                    
+          **********  ***                    
+          **********  ***                     
+'''
+def Animate():
+    i=0
+    while i!=3:
+        system("cls")
+        espacio()
+        centrar(paso1)
+        espacio()
+        time.sleep(0.2)
+        system("cls")
+        espacio()
+        centrar(paso2)
+        espacio()
+        time.sleep(0.2)
+        system("cls")
+        espacio()
+        centrar(paso3)
+        espacio()
+        time.sleep(0.2)
+        system("cls")
+        espacio()
+        centrar(paso4)
+        espacio()
+        time.sleep(0.2)
+        system("cls")
+        espacio()
+        centrar(paso5)
+        espacio()
+        time.sleep(0.2)
+        system("cls")
+        espacio()
+        centrar(paso6)
+        espacio()
+        time.sleep(0.2)
+        system("cls")
+        espacio()
+        centrar(paso1)
+        espacio()
+        time.sleep(0.2)
+        i += 1
 
 sueldo = 12000.00
 while True:
+    system("cls")
     espacio()
-    centrar("Cajero XD")
+    centrar(paso1)
     espacio()
     centrar("Elije una opción")
     print('''
@@ -144,8 +194,5 @@ while True:
             espacio()
             time.sleep(1)
             system("cls")
-            break
-
-
-    
-
+            Animate()
+            break 
