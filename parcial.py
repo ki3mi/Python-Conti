@@ -33,13 +33,15 @@ def validar(letra):
             return(True)
 
 
-# Variables globales
+# Listas globales
 nombres = []
 tipos = []
 generos = []
-pasajes = []
 servicios = []
+pasajes = []
 totales = []
+descuentos = []
+
 subtotal = None
 tiempo = 0.8
 
@@ -111,6 +113,22 @@ Tipo de servicio
             usable = int(input("-> "))
             if usable > 0:
                 pasajes.append(usable)
+                subtotal *= usable
+                if usable == 1:
+                    descuentos.append(0)
+                    totales.append(subtotal)
+                elif usable >=2 and usable <= 5:
+                    descuentos.append(10)
+                    subtotal = subtotal - (subtotal*0.1)
+                    totales.append(subtotal)
+                elif usable >= 6 and usable <= 10:
+                    descuentos.append(15)                    
+                    subtotal = subtotal - (subtotal*0.15)
+                    totales.append(subtotal)
+                else:
+                    descuentos.append(25)
+                    subtotal = subtotal - (subtotal*0.2)
+                    totales.append(subtotal)
                 break
             else:
                 print("*Opción no valida, solo números mayores a 0*")
@@ -132,20 +150,32 @@ Tipo de servicio
             selector = int(input("-> "))
             if selector == 1:
                 cantidad = len(servicios)
+                system("cls")
                 for i in range(cantidad):
-                    system("cls")
                     centrar("Lista de ventas")
-
+                    print(i+1, "°:")
+                    print("Nombre: ",nombres[i])
+                    print("Tipo de cliente: ", tipos[i])
+                    print("Género: ", generos[i])
+                    print("Tipo de servicio: ", servicios[i])
+                    print("Pasajes comprados: ", pasajes[i])
+                    print("Total: S/.", totales[i])
+                    print("Descuento: ", descuentos[i])
+                    espacio()
             elif selector == 2:
-                pass
+                sumtoria = 0
+                cantidad = len(totales)
+                for i in range(cantidad):
+                    sumtoria += totales[i]
+                centrar("Reporte acumulado")
+                print("Cantidad de ventas totales: ", cantidad+1)
+                print("Sumatoria total: S/.", sumtoria)
             else:
                 break
-            time.sleep(5)
+            espacio()
+            usable = input("*Preciona una tecla para continuar*")
 
     elif option == 3:
         break
     else:
         print("Opción no valida")
-
-
-
