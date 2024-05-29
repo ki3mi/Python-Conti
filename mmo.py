@@ -23,6 +23,7 @@ class Guerrero():
     def __init__(self, nombre, fuerza, inteligencia, vida, nivel, oro):
         self.nombre = nombre
         self.vida = vida
+        self.vida_max = vida
         self.fuerza = fuerza
         self.inteligencia = inteligencia
         self.nivel = nivel
@@ -31,11 +32,26 @@ class Guerrero():
     def atacar(self):
         ataque = self.fuerza
         return ataque
+    
     def perder_vida(self, ataque):
         if self.vida > 0:
             self.vida -= ataque
         else:
-            print('Está muerto')
+            return {"res" : "Está muerto"}
+
+    def ganar_vida(self, puntos):
+        total = self.vida + puntos
+        if self.vida == self.vida_max:
+            return {"res" : "Vida completa"}
+        else:            
+            if total >= self.vida_max:
+                total -= self.vida_max
+                self.vida = self.vida_max
+            else:
+                self.vida += puntos
+            return {"res": f"+{total} puntos"}
+    
+    
 class Mago(Guerrero):
     def atacar(self):
         ataque = self.fuerza * self.inteligencia
@@ -44,10 +60,6 @@ class Mago(Guerrero):
 
 
 def pelear():
-    if personaje.nivel > enemigo.nivel:
-        x = 2
-    else:
-        x = 1
     continuar = 1
     while enemigo.vida > 0 and personaje.vida > 0 and continuar == 1:
         espacio()
